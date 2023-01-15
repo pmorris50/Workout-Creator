@@ -2,8 +2,9 @@ const path = require('path'); // in case we need to join/resolve paths
 const express = require('express'); //get express 
 const session = require('express-session'); //get express-session
 const exphbs = require('express-handlebars');
-const routes = require('./controllers')
+const routes = require('./controllers');
 const helpers = require('./utils/helpers') //in case we want to add a time stamp/calendar to a users home page 
+const authRoutes = require('./controllers/api/authRoutes')
 // const passport = require('passport');
 // const LocalStrategy = require('passport-local').Strategy //
 // const FacebookStrategy = require('passport-facebook').Strategy
@@ -16,7 +17,8 @@ const app = express();
 const PORT = process.env.PORT || 3002;
 
 const hbs = exphbs.create({helpers}); //creates instance of Handlebars template engine for helpers.js
- 
+app.use
+app.use(routes);
 const sess = {
     secret: 'Super secret secret',
     cookie: {
@@ -27,7 +29,7 @@ const sess = {
         sameSite: 'strict',
     },
     resave: false, //session will only be resaved if modified
-    saveUnitialized: true, //new session will be saved
+    saveUninitialized: true, //new session will be saved
     store: new SequelizeStore({
         db: sequelize //stores the session data
     })
@@ -40,8 +42,6 @@ app.set('view engine', 'handlebars'); // Tells express app to look for a file wi
 app.use(express.json()); //parses incoming request bodies as JSON
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use(routes);
 //end middleware
 sequelize.sync({force: false}).then(()=> {
     app.listen(PORT, ()=>{
