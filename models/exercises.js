@@ -1,4 +1,4 @@
-const {Model, Datatypes} = require('sequelize');
+const {Model, DataTypes} = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Exercise extends Model {}
@@ -18,13 +18,15 @@ Exercise.init(
         muscle_group:{
             type: DataTypes.ENUM('Core', 'Legs', 'Chest', 'Back', 'Arms'),
             allowNull: false
-            //ENUM allows for a list to be input as the data. IE can select from x, y, z. NOT TESTED 
+            //ENUM allows for a list to be input as the data. IE can select from x, y, z. NOT TESTED  //enum only allows for one option
         }, 
-        demo_link: {
+        //demo links from https://www.muscleandstrength.com/
+        demo_link: { 
                 type: DataTypes.STRING,
                 allowNull: true
             
         }, 
+
 
 
     },
@@ -34,18 +36,7 @@ Exercise.init(
         freezeTableName: true,
         underscored: true,
         modelName: 'exercise'
-    }
-)
-
-
-
-
-
-
-
-
-
-
-
+    },
+);
 
 module.exports = Exercise;
