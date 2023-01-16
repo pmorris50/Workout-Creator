@@ -8,7 +8,7 @@ const seedDatabase = async () => {
     await sequelize.sync({force: true});
     console.log('\n----- DATABASE SYNCED -----\n');
     await seedExercises();
-    console.log(('\n----- EXERCISES SEEDED -----\n');
+    console.log(('\n----- EXERCISES SEEDED -----\n'));
     
     process.exit(0);
     };
