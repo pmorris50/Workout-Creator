@@ -50,18 +50,7 @@ User.init(
         }, //all above is needed(allowNull: false) and user can create profile with just this information
 
         //if any below is null, then user will have a modal pop up asking to please complete profile with a not now button/complete profile button
-        equipment: {
-            type: DataTypes.STRING,
-            equipment_list: {
-            type: DataTypes.ENUM('Dumbbells', 'Barbell', 'Rack'), //Exercise table will need to know what equipment the User has
-            array: true, 
-            },
-            //setting equipment_list then an ENUM list, set to array allows multiple to be selected to user_equipment col
-            allNull: true,
-        },
-        //goal: {
-           // type: DataTypes.ENUM('Add Mass', 'Fat loss', 'Increase Max Strength', 'Increase Endurance'),
-         //   allowNull: false, //exercise will also need this field. Each exercise will have a one to one relationship with this field.  //probably will want to put in another table? or maybe just get rid of this b/c its to much work
+      //probably will want to put in another table? or maybe just get rid of this b/c its to much work
         }
      
 )
