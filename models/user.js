@@ -59,9 +59,9 @@ User.init(
             //setting equipment_list then an ENUM list, set to array allows multiple to be selected to user_equipment col
             allNull: true,
         },
-        goal: {
-            type: DataTypes.ENUM('Add Mass', 'Fat loss', 'Increase Max Strength', 'Increase Endurance'),
-            allowNull: false, //exercise will also need this field. Each exercise will have a one to one relationship with this field.  //probably will want to put in another table? or maybe just get rid of this b/c its to much work
+        //goal: {
+           // type: DataTypes.ENUM('Add Mass', 'Fat loss', 'Increase Max Strength', 'Increase Endurance'),
+         //   allowNull: false, //exercise will also need this field. Each exercise will have a one to one relationship with this field.  //probably will want to put in another table? or maybe just get rid of this b/c its to much work
         }
-    }  
+     
 )

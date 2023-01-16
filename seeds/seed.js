@@ -1,16 +1,20 @@
 const sequelize = require('../config/connection');
 const Exercise  = require('../models/exercises');
+const seedExercises = require('./exercises-seeds');
 
-const exerciseList = require('./exercisesData.json');
+
 
 const seedDatabase = async () => {
     await sequelize.sync({force: true});
-    const exercise = await Exercise.bulkCreate(exerciseList, {
-        returning: true
-    });
-
-
+    console.log('\n----- DATABASE SYNCED -----\n');
+    await seedExercises();
+    console.log(('\n----- EXERCISES SEEDED -----\n');
+    
     process.exit(0);
-}
+    };
+    
+
+
+
 
 seedDatabase();

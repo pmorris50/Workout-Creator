@@ -1,4 +1,5 @@
-[
+const  Exercise   = require('../models/exercises'); //putting curly brackets around exercise cause it to become undefined?
+const exerciseData = [
 {
  "name": "Plank",
  "muscle_group": "Core",
@@ -63,3 +64,7 @@
     "demo_link": "https://www.muscleandstrength.com/exercises/push-up.html"
  }
 ]
+
+const seedExercises = () => Exercise.bulkCreate(exerciseData);
+
+module.exports = seedExercises;
