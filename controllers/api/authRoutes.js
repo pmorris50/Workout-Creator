@@ -2,14 +2,15 @@ const router = require('express').Router();
 
 //auth login 
 router.get('/login', (req, res) =>{
-    console.log('/ Get Login')
-    res.render('login');
+   // console.log('/ Get Login');
+    res.send('please log on');
+   // res.render('login');
 });
 //auth log out
 router.get('/logout', (req, res) => {
     console.log('Hitting GET /logout')
    //handle with passport
-    res.send('loggint out')
+    res.send('logging out')
 })
 
 //auth with google
