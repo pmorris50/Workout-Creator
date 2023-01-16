@@ -2,8 +2,7 @@ const router = require('express').Router();
 
 //auth login 
 router.get('/login', (req, res) =>{
-   // console.log('/ Get Login');
-    // res.send('please log on');
+  //console.log('/ GET login');
    res.render('login');
 });
 //auth log out

@@ -51,6 +51,27 @@ User.init(
 
         //if any below is null, then user will have a modal pop up asking to please complete profile with a not now button/complete profile button
       //probably will want to put in another table? or maybe just get rid of this b/c its to much work
-        }
+        },
+        {
+            hooks: {
+              beforeCreate: async (newUserData) => {
+                newUserData.password = await bcrypt.hash(newUserData.password, 10);
+                return newUserData;
+              },
+              beforeUpdate: async (updatedUserData) => {
+                updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+                return updatedUserData;
+              },
+            },
+            sequelize,
+            timestamps: false,
+            freezeTableName: true,
+            underscored: true,
+            modelName: 'user',
+          }
      
 )
+
+
+
+module.exports = User;
