@@ -25,7 +25,7 @@ User.init(
 
 
         last_name: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         email: {
