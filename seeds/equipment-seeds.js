@@ -1,4 +1,4 @@
-const Equipment = require('../models/equipment');
+const { Equipment } = require('../models');
 const equipmentData = [
     {
         "name": "Bench"
@@ -13,7 +13,7 @@ const equipmentData = [
         "name": "Rack"
     },
     {
-        "name": "No_Equipmet"
+        "name": "No_Equipment"
     }
 ]
 
