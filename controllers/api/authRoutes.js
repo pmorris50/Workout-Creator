@@ -5,6 +5,7 @@ router.get('/login', (req, res) =>{
   //console.log('/ GET login');
    res.render('login');
 });
+
 //auth log out
 router.get('/logout', (req, res) => {
     console.log('Hitting GET /logout')
