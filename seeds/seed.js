@@ -1,7 +1,7 @@
 const sequelize = require('../config/connection');
-const Exercise  = require('../models/exercises');
 const seedEquipment = require('./equipment-seeds');
 const seedExercises = require('./exercises-seeds');
+const seedUsers = require('./user');
 
 
 
@@ -12,10 +12,11 @@ const seedDatabase = async () => {
     console.log(('\n----- EXERCISES SEEDED -----\n'));
     await seedEquipment()
     console.log('\n----------EQUIPMENT SEEDED-------\n')
+    await seedUsers();
+    console.log('\n----------USERS SEEDED-------\n')
 
 
 
-    
     process.exit(0);
     };
     

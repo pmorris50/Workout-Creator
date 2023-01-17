@@ -7,3 +7,7 @@ const exerciseData = [
  "password":"Password123!"
 },
 ] 
+
+const seedUsers = () => User.bulkCreate(userData);
+
+module.exports = seedUsers;

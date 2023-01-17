@@ -25,7 +25,16 @@ Exercise.init(
                 type: DataTypes.STRING,
                 allowNull: true
             
-        }, 
+        }, equipment_id:{
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'equipment',
+                key: 'id',
+            }
+        }
+        
+        
+    
 
 
 
