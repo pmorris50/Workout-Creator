@@ -4,7 +4,7 @@ const Equipment = require('./equipment')
 
 
 
-User.hasMany(Equipment, {
+User.belongsToMany(Equipment, {
     through: 'user_equipment',
     onDelete: 'SET NULL'  //When equipment is deleted we do not want to delete the User. When a user is deleted we do not want to delete the equipment
     //not sure what goes in here 
@@ -21,13 +21,17 @@ User.hasMany(Equipment, {
 Exercise.hasOne(Equipment, {
     foreignKey: 'equipment_id',
     allowNull: true,
-   //onDelete: 'CASCADE'
+    //onDelete: 'CASCADE'
 })
 
 
-Equipment.hasMany(Exercise,  {
-    
-   // onDelete: 'SET NULL' //when a piece of equipment is deleted all accociated exercises are deleted
+Equipment.hasMany(Exercise, {
+
+    // onDelete: 'SET NULL' //when a piece of equipment is deleted all accociated exercises are deleted
     //not sure what goes in here 
 })
 
+
+module.exports = {
+    Equipment, Exercise, User
+}
