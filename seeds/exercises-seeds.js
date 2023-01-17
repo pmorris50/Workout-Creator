@@ -1,4 +1,4 @@
-const Exercise = require("../models/exercises"); //putting curly brackets around exercise cause it to become undefined?
+const { Exercise } = require("../models"); //putting curly brackets around exercise cause it to become undefined?
 const exerciseData = [
   {
     name: "Plank",
