@@ -4,7 +4,7 @@ const exerciseData = [
     name: "Plank",
     muscle_group: "Core",
     demo_link: "https://www.muscleandstrength.com/exercises/hover.html",
-    equipment_id: "null",
+    equipment_id: 4
   },
   {
     name: "Dumbbell Bench Press ",
@@ -58,13 +58,13 @@ const exerciseData = [
     muscle_group: "Core",
     demo_link:
       "https://www.muscleandstrength.com/exercises/rotating-mountain-climber",
-    equipment_id: "null",
+    equipment_id: 4,
   },
   {
     name: "Pushup",
     muscle_group: "Chest",
     demo_link: "https://www.muscleandstrength.com/exercises/push-up.html",
-    equipment_id: "null",
+    equipment_id: 4,
   },
 ];
 

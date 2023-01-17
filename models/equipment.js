@@ -16,7 +16,13 @@ Equipment.init(
         allowNull: true
     }
 
-  }  
+  },    {
+    sequelize, 
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'equipment'
+},  
 ),
 
 

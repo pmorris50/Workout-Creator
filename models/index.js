@@ -11,23 +11,23 @@ User.hasMany(Equipment, {
 })
 
 
-Equipment.belongsToMany(User,{
-    through: 'equipment_user', 
-    onDelete: 'SET NULL' //do not want to delete parent
-    //not sure what goes in here 
-})
+// Equipment.belongsToMany(User,{
+//     through: 'equipment_user', 
+//    // onDelete: 'SET NULL' //do not want to delete parent
+//     //not sure what goes in here 
+// })
 
 
 Exercise.hasOne(Equipment, {
     foreignKey: 'equipment_id',
     allowNull: true,
-    onDelete: 'CASCADE'
+   //onDelete: 'CASCADE'
 })
 
 
 Equipment.hasMany(Exercise,  {
     
-    onDelete: 'SET NULL' //when a piece of equipment is deleted all accociated exercises are deleted
+   // onDelete: 'SET NULL' //when a piece of equipment is deleted all accociated exercises are deleted
     //not sure what goes in here 
 })
 

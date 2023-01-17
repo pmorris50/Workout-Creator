@@ -7,12 +7,12 @@ const seedUsers = require('./user');
 
 const seedDatabase = async () => {
     await sequelize.sync({force: true});
-    console.log('\n----- DATABASE SYNCED -----\n');
-    await seedExercises();
-    console.log(('\n----- EXERCISES SEEDED -----\n'));
-    await seedEquipment()
-    console.log('\n----------EQUIPMENT SEEDED-------\n')
     await seedUsers();
+    console.log('\n----- DATABASE SYNCED -----\n');
+    await seedEquipment()
+    console.log(('\n----- EXERCISES SEEDED -----\n'));
+    await seedExercises();
+    console.log('\n----------EQUIPMENT SEEDED-------\n')
     console.log('\n----------USERS SEEDED-------\n')
 
 
