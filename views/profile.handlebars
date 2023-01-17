@@ -19,8 +19,8 @@
                                 style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
                                 <img src="../public/img/dumbell.png" alt="Avatar" class="img-fluid my-5"
                                     style="width: 80px;" />
-                                <h5>John Doe</h5>
-                                <p>Member ID: 1123</p>
+                                <h5>Welcome, {{first_name}}!</h5>
+                                <p>Member ID: {{id}}</p>
                                 <i class="far fa-edit mb-5"></i>
                             </div>
                             <div class="col-md-8">
@@ -29,15 +29,12 @@
                                     <hr class="mt-0 mb-4">
                                     <div class="row pt-1">
                                         <div class="col-6 mb-3">
-                                            <h6>Email</h6>
-                                            <p class="text-muted">info@example.com</p>
+                                            <h6>Account Email</h6>
+                                            <p class="text-muted">{{email}}</p>
                                         </div>
-                                        <div class="col-6 mb-3">
-                                            <h6>Phone</h6>
-                                            <p class="text-muted">123 456 789</p>
-                                        </div>
+
                                     </div>
-                                    <h6>Projects</h6>
+                                    <h6>Recent Workouts</h6>
                                     <hr class="mt-0 mb-4">
                                     <div class="row pt-1">
                                         <div class="col-6 mb-3">
