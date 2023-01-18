@@ -9,9 +9,9 @@ router.get('/', (req, res) => {
 
 router.get('/profile', withAuth, async (req, res) => {
     try {
-        const userData = await User.findbyPK(req.session.user_id, {
+        const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
-            include: [{ model: Equipment }, { model: Exercise }],
+            // include: [{ model: Equipment }, { model: Exercise }],
         });
         const user = userData.get({ plain: true });
         res.render('profile', {
@@ -42,5 +42,10 @@ router.get('/login', (req, res) => {
 //     }
 //     res.render('login');
 // })
+
+router.get('/createUser', (req, res) => {
+    console.log('/ get homepage');
+    res.render('createUser');
+});
 
 module.exports = router;
