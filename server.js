@@ -14,11 +14,10 @@ const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3001;
 
-const hbs = exphbs.create({helpers}); //creates instance of Handlebars template engine for helpers.js
-app.use
-app.use(routes);
+const hbs = exphbs.create({ helpers }); //creates instance of Handlebars template engine for helpers.js
+
 const sess = {
     secret: 'Super secret secret',
     cookie: {
@@ -30,9 +29,9 @@ const sess = {
     },
     resave: false, //session will only be resaved if modified
     saveUninitialized: true, //new session will be saved
-    store: new SequelizeStore({
-        db: sequelize //stores the session data
-    })
+    // store: new SequelizeStore({
+    //     db: sequelize //stores the session data
+    // })
 };
 //middleware below 
 app.use(session(sess)); //session middleware must be added before any routes that need to access session data 
@@ -40,11 +39,12 @@ app.engine('handlebars', hbs.engine); //sets handlebars template engine as the v
 app.set('view engine', 'handlebars'); // Tells express app to look for a file with extension of handlebars when a route renders a page 
 
 app.use(express.json()); //parses incoming request bodies as JSON
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 //end middleware
-sequelize.sync({force: false}).then(()=> {
-    app.listen(PORT, ()=>{
+app.use(routes);
+sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, () => {
         console.log(`Now listening on port ${PORT}`)
     });
 });

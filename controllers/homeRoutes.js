@@ -16,17 +16,19 @@ router.get('/profile', withAuth, async (req, res) => {
         const user = userData.get({ plain: true });
         res.render('profile', {
             ...user,
-            logged_in: true
+            loggedIn: req.session.loggedIn
         });
     } catch (err) {
+        console.log("Error:", err);
         res.status(500).json(err);
     }
 });
 
 router.get('/login', (req, res) => {
     console.log('have we been tricked?')
-    if (req.session?.logged_in === undefined || !req.session?.logged_in) {
-        res.render('login')
+    // if (req.session?.loggedIn === undefined || !req.session?.loggedIn) {
+    if (!req.session.loggedIn) {
+        res.render('login');
     } else {
         res.redirect('/profile');
         return;
@@ -34,7 +36,7 @@ router.get('/login', (req, res) => {
 })
 
 // router.get('/login', (req, res) => {
-//     if (req.session.logged_in) {
+//     if (req.session.loggedIn) {
 //         res.redirect('/profile');
 //         return;
 //     }
