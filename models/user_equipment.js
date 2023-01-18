@@ -23,10 +23,19 @@ User_Equipment.init(
                 model: 'equipment',
                 key: 'id',
             }
-    }
+    },
+   
 
 
-    })
+    },
+    {
+        sequelize, 
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'user_equipment'
+    },
+    )
 
 
 
