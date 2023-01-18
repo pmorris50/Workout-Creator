@@ -1,7 +1,8 @@
 const router = require('express').Router();
-const authRoutes = require('./authRoutes');
+// const authRoutes = require('./authRoutes');
 const userRoutes = require('./userRoutes')
-router.use('/auth', authRoutes);
+// actual sub route so far is /api
+// router.use('/auth', authRoutes);
 router.use('/users', userRoutes)
 
 module.exports = router;

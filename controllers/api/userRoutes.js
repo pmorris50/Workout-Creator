@@ -1,10 +1,10 @@
 const router = require('express').Router();
 const { User } = require('../../models'); //object destructuring
 
-console.log("User:", User);
-
+// signup route via api -> POST /api/users
 router.post('/', async (req, res) => {
     try {
+        
         const userData = await User.create(req.body);
         req.session.save(() => {
 
@@ -17,7 +17,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-
+// login route -> POST /api/users/login
 router.post('/login', async (req, res) => {
     console.log(req.body)
     // console.log('email', req.body.email)
@@ -54,7 +54,7 @@ router.post('/login', async (req, res) => {
     }
 });
 
-
+// logout route -> POST /api/users/logout
 router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
         req.session.destroy(() => {
@@ -65,9 +65,5 @@ router.post('/logout', (req, res) => {
     }
 });
 
-
-router.get('/profile')
-
 module.exports = router;
 
-router.post('./')
