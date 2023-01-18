@@ -25,6 +25,7 @@ router.post('/login', async (req, res) => {
         const userData = await User.findOne({ where: { email: req.body.email } });
         console.log('email', req.body.email)
         if (!userData) {
+            console.log('invalid user email')
             res.status(500).json({
                 message: 'Incorrect email or password, please try again'
             });
@@ -64,4 +65,9 @@ router.post('/logout', (req, res) => {
     }
 });
 
+
+router.get('/profile')
+
 module.exports = router;
+
+router.post('./')
