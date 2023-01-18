@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const withAuth = require('../../utils/auth');
 const { Exercise, Equipment } = require('../../models');
+const { appendFile } = require('fs');
 
 // get all Equipment
 router.get('/', async (req, res)=>{
@@ -63,6 +64,8 @@ router.delete('/:id', async (req, res)=> {
         res.status(500).json(err);
     };
 });
+
+
 
 
 module.exports = router;
