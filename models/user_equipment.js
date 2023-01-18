@@ -17,11 +17,16 @@ User_Equipment.init(
                 model: 'user',
                 key: 'id',
             }
-        },
+        },  equipment_id:{
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'equipment',
+                key: 'id',
+            }
     }
 
 
-)
+    })
 
 
 
