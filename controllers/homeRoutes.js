@@ -53,7 +53,7 @@ router.get('/login', (req, res) => {
 //     res.render('login');
 // })
 
-router.get('/createUser', (req, res) => {
+router.get('/signup', (req, res) => {
     console.log('/ get homepage');
     res.render('createUser');
 });
