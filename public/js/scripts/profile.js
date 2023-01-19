@@ -12,10 +12,30 @@ button.addEventListener('click', (e)=> {
     let $htmlTarget = document.querySelector(".modal-body-2");
     let htmlTemplate = `Selected: ${selected}`;
     $htmlTarget.innerHTML = htmlTemplate;
-
-
-
-    console.log(equipIds)
+    fetch('/api/exercises', {
+        method: 'POST',
+        body: JSON.stringify({equipId: equipIds}),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(res => res.json()).then(data =>{
+        let $target = document.querySelector('#exercises-target');
+        let html = ``
+        for (let exercise of data) {
+            html+= `<h3>${exercise.name}</h3>`
+        };
+        $target.innerHTML = html;
+        console.log(data)
+    })
+   
+    .catch(err => {
+        console.error(err);
+    });
 });
+
+
+    //console.log(equipId)
+;
 
 
