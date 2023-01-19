@@ -1393,3 +1393,12 @@ section {
 #footer .credits {
   font-size: 13px;
 }
+.center {
+  margin: auto;
+}
+.image-center {
+ width: auto;
+ height: auto;
+ margin: auto;
+ padding: 10%;
+}
