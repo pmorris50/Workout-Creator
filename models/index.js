@@ -26,7 +26,7 @@ Exercise.hasOne(Equipment, {
 
 
 Equipment.hasMany(Exercise, {
-
+    foreignKey: ''
     // onDelete: 'SET NULL' //when a piece of equipment is deleted all accociated exercises are deleted
     //not sure what goes in here 
 })
