@@ -8,7 +8,7 @@ router.get('/', async (req, res)=>{
     try{
         const newEquipment = await Equipment.findAll(
             {
-                include: [{ model:Exercises}]
+                include: [{ model:Exercise}]
             }
         );
         res.status(200).json(newEquipment);
