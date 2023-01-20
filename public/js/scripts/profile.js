@@ -23,7 +23,11 @@ button.addEventListener('click', (e)=> {
         let $target = document.querySelector('#exercises-target');
         let html = ``
         for (let exercise of data) {
-            html+= `<h3>${exercise.name}</h3>`
+            html+= `<h3>${exercise.name}</h3> <video width="320" height="240" controls>
+ 
+            <source src= "${exercise.demo_link}" type="video/webm">
+            Your browser does not support the video tag.
+          </video>`
         };
         $target.innerHTML = html;
         console.log(data)
