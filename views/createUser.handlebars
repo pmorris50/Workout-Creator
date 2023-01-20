@@ -6,34 +6,27 @@
           <div class="card-body p-md-5">
             <div class="row justify-content-center">
               <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-<!-- Sign Up -->
+                <!-- Sign Up -->
                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
 
                 <form class="mx-1 mx-md-4">
-<!-- Name section -->
+                  <!-- Name section -->
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="text" id="form3Example1c first-name-signup" class="form-control" />
-                      <label class="form-label"  for="form3Example1c">First Name</label>
+                      <input type="text" id="form3Example1c name-signup" class="form-control" />
+                      <label class="form-label" for="form3Example1c">Your Name</label>
                     </div>
                   </div>
-                    <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
-                      <input type="text" id="form3Example1c last-name-signup" class="form-control" />
-                      <label class="form-label"  for="form3Example1c">Last Name</label>
-                    </div>
-                  </div>
-<!-- Email section -->
+                  <!-- Email section -->
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
                       <input type="email" id="form3Example3c email-signup" class="form-control" />
-                      <label class="form-label"  for="form3Example3c">Your Email</label>
+                      <label class="form-label" for="form3Example3c">Your Email</label>
                     </div>
                   </div>
-<!-- Password section -->
+                  <!-- Password section -->
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
@@ -41,7 +34,7 @@
                       <label class="form-label" for="form3Example4c">Password</label>
                     </div>
                   </div>
-<!-- Repeat passowrd section -->
+                  <!-- Repeat passowrd section -->
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
@@ -49,14 +42,25 @@
                       <label class="form-label" for="form3Example4cd">Repeat your password</label>
                     </div>
                   </div>
-<!-- Check terms of service (we don't have terms) -->
+                  <!-- Check terms of service (we don't have terms) -->
                   <div class="form-check d-flex justify-content-center mb-5">
                     <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
                     <label class="form-check-label" for="form2Example3">
-                      I agree all statements in <a href="views\TOS.html">Terms of service</a>
+                      I agree all statements in <div class="popup" onclick="myFunction()"><a href="#!">Terms of
+                          service</a>
+                        <span class="popuptext" id="myPopup">TERMS OF SERVICE AGREEMENT - PLEASE READ THE FOLLOWING
+                          TERMS OF SERVICE AGREEMENT CAREFULLY. WORK HARD. THAT'S IT. </span>
+                      </div>
                     </label>
                   </div>
-<!-- Register button -->
+                  <script>
+                    // When the user clicks on <div>, open the popup
+                    function myFunction() {
+                      var popup = document.getElementById("myPopup");
+                      popup.classList.toggle("show");
+                    }
+                  </script>
+                  <!-- Register button -->
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                     <button type="button" class="btn btn-primary btn-lg">Register</button>
                   </div>
@@ -66,8 +70,8 @@
               </div>
               {{!-- <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
 
-                <img src="public\assets\img\workout-stock-image-signup.jpg"
-                  class="img-fluid center" alt="Sample image"> --}}
+                <img src="public\assets\img\workout-stock-image-signup.jpg" class="img-fluid center" alt="Sample image">
+                --}}
 
               </div>
             </div>
