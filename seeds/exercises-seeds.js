@@ -3,27 +3,27 @@ const exerciseData = [
   {
     name: "Plank",
     muscle_group: "Core",
-    demo_link: "https://www.muscleandstrength.com/exercises/hover.html",
+    demo_link: "/videos/plankvid.webm",
     equipment_id: 5,
   },
   {
     name: "Dumbbell Bench Press ",
     muscle_group: "Chest",
     demo_link:
-      "https://www.muscleandstrength.com/exercises/dumbbell-bench-press.html ",
+      "/videos/dbBenchPress.webm",
     equipment_id: 1,
   },
   {
     name: "Back Squat",
     muscle_group: "Legs",
-    demo_link: "https://www.muscleandstrength.com/exercises/squat.html",
+    demo_link: "/videos/BackSquat.webm",
     equipment_id: 4,
   },
   {
     name: "Dumbbell Curl ",
     muscle_group: "Arms",
     demo_link:
-      "https://www.muscleandstrength.com/exercises/standing-dumbbell-curl.html",
+    "/videos/BicepCurls.webm",  //must screen capture save video into public/video and remember to "${}" when calling
     equipment_id: 3,
   },
   {
