@@ -2,6 +2,10 @@ const router = require('express').Router();
 const withAuth = require('../utils/auth');
 const { User, Equipment, Exercise } = require('../models')
 
+
+
+
+
 router.get('/', (req, res) => {
     console.log('/ get homepage');
     res.render('homepage');
@@ -9,13 +13,19 @@ router.get('/', (req, res) => {
 
 router.get('/profile', withAuth, async (req, res) => {
     try {
-        const userData = await User.findbyPK(req.session.user_id, {
+        const equipmentData = await Equipment.findAll({})
+        const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
-            include: [{ model: Equipment }, { model: Exercise }],
+            // include: [{ model: Equipment }, { model: Exercise }],
         });
+        const equipment = await equipmentData.map((element) => {
+            return element.get({plain: true})
+        })
+        console.log("SERIALIZED", equipment)
         const user = userData.get({ plain: true });
         res.render('profile', {
             ...user,
+           equipment,
             loggedIn: req.session.loggedIn
         });
     } catch (err) {
@@ -42,5 +52,10 @@ router.get('/login', (req, res) => {
 //     }
 //     res.render('login');
 // })
+
+router.get('/signup', (req, res) => {
+    console.log('/ get homepage');
+    res.render('createUser');
+});
 
 module.exports = router;

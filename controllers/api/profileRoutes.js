@@ -1,13 +1,14 @@
 const router = require('express').Router();
 const withAuth = require('../../utils/auth');
-const { Exercises, Equipment } = require('../../models');
+const { Exercise, Equipment } = require('../../models');
+const { appendFile } = require('fs');
 
 // get all Equipment
 router.get('/', async (req, res)=>{
     try{
         const newEquipment = await Equipment.findAll(
             {
-                include: [{ model:Exercises}]
+                include: [{ model:Exercise}]
             }
         );
         res.status(200).json(newEquipment);
@@ -65,4 +66,7 @@ router.delete('/:id', async (req, res)=> {
 });
 
 
+
+
 module.exports = router;
+
