@@ -30,40 +30,40 @@ const exerciseData = [
     name: "Bent Over Row",
     muscle_group: "Back",
     demo_link:
-      "https://www.muscleandstrength.com/exercises/bent-over-barbell-row.html",
+      "/videos/bentOverRowBB.webm",
     equipment_id: 2,
   },
   {
     name: "Deadlift",
     muscle_group: "Legs",
     demo_link:
-      "https://www.muscleandstrength.com/exercises/bent-over-barbell-row.html ",
+      "/videos/deadliftBB.webm",
     equipment_id: 2,
   },
   {
     name: "Barbell Hip Thrust ",
     muscle_group: "Legs",
-    demo_link: "https://www.muscleandstrength.com/exercises/barbell-hip-thrust",
+    demo_link: "/videos/barbellHipThrust.webm",
     equipment_id: 2,
   },
   {
     name: "Skull Crusher ",
     muscle_group: "Arms",
     demo_link:
-      "https://www.muscleandstrength.com/exercises/lying-tricep-extension.html ",
+      "/videos/skullCrusher.webm",
     equipment_id: 2,
   },
   {
     name: "Rotating Mountain Climber",
     muscle_group: "Core",
     demo_link:
-      "https://www.muscleandstrength.com/exercises/rotating-mountain-climber",
+      "/videos/rotatingMTclimber.webm",
     equipment_id: 5,
   },
   {
     name: "Pushup",
     muscle_group: "Chest",
-    demo_link: "https://www.muscleandstrength.com/exercises/push-up.html",
+    demo_link: "/videos/pushup.webm",
     equipment_id: 5,
   },
 ];
