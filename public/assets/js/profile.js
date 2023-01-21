@@ -1,6 +1,6 @@
 
 
-const button = document.querySelector("#start-mdl-2");
+const button = document.querySelector(".start-mdl-2");
 
 button.addEventListener('click', (e) => {
     e.preventDefault();

@@ -6,8 +6,8 @@ router.post('/', async (req, res)=> {
     console.log('Create route hit')
     try {
         const dbUser= await User.create ({
-            first_name: req.body.first_name,
-            last_name: req.body.last_name,
+            first_name: req.body.firstName,
+            last_name: req.body.lastName,
             email: req.body.email,
             password: req.body.password,
         });
