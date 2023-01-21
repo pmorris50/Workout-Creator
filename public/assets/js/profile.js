@@ -1,8 +1,9 @@
 
 
-const button = document.querySelector(".start-mdl-2");
+const button = document.getElementById("start-mdl-2");
 
 button.addEventListener('click', (e) => {
+    console.log('starting workout')
     e.preventDefault();
     let selected = [];
     let equipIds = []
