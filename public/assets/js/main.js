@@ -250,3 +250,23 @@
   });
 
 })()
+
+const contactUsFormHandler = async (event) =>{
+  event.preventDefault();
+const name = document.getElementById('name');
+const email = document.getElementById('email');
+const subject = document.getElementById('subject');
+const message = document.getElementById('message');
+
+if(name && email && subject && message){
+  console.log('data entered')
+  const response = await fetch('api/homeEmail/', {
+    method: 'POST',
+    body: JSON.stringify({name, email, subject, message}),
+    headers: {'Content-Type': 'application/json'},
+  })
+}};
+
+document
+.querySelector('.contact')
+.addEventListener('submit', contactUsFormHandler);
