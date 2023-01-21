@@ -3,12 +3,7 @@ const express = require('express'); //get express
 const session = require('express-session'); //get express-session
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
-const helpers = require('./utils/helpers') //in case we want to add a time stamp/calendar to a users home page 
-//const authRoutes = require('./controllers/api/authRoutes')
-// const passport = require('passport');
-// const LocalStrategy = require('passport-local').Strategy //
-// const FacebookStrategy = require('passport-facebook').Strategy
-// const GoogleStrategy = require('passport-google').Strategy
+const helpers = require('./utils/helpers') //in case we want to add 
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
