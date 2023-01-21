@@ -253,10 +253,10 @@
 
 const contactUsFormHandler = async (event) =>{
   event.preventDefault();
-const name = document.getElementById('name');
-const email = document.getElementById('email');
-const subject = document.getElementById('subject');
-const message = document.getElementById('message');
+const name = document.getElementById('name').value;
+const email = document.getElementById('email').value;
+const subject = document.getElementById('subject').value;
+const message = document.getElementById('message').value;
 
 if(name && email && subject && message){
   console.log('data entered')
