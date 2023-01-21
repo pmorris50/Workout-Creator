@@ -1,8 +1,8 @@
 const router = require("express").Router();
 
 router.post('/', async (req, res) => {
-    console.log(req.body);
-    
+    console.log(req.body)
+
 
 })
 
