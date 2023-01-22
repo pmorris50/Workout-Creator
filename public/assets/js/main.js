@@ -288,16 +288,8 @@ emailBtn.addEventListener('click', () => {
 } )
 
 
-const mapBtn = document.getElementById('mapBtn')
 
-const mapBtnHandler = () =>{
-const openModal = document.getElementById('mapModal')
-openModal.classList.add("show")
-openModal.style.display = "block";
 
-}
-
-mapBtn.addEventListener('click', mapBtnHandler)
 
 
 //call button event listener
