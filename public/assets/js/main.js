@@ -253,6 +253,9 @@
 
 const contactUsFormHandler = async (event) =>{
   event.preventDefault();
+  document.getElementById("emailModal").classList.add("show");
+  document.getElementById("emailModal").style.display = "block";
+
 const name = document.getElementById('name').value;
 const email = document.getElementById('email').value;
 const subject = document.getElementById('subject').value;
@@ -270,3 +273,8 @@ if(name && email && subject && message){
 document
 .querySelector('.contact')
 .addEventListener('submit', contactUsFormHandler);
+
+document.getElementsByClassName("close")[0].addEventListener("click", function(){
+  document.getElementById("emailModal").classList.remove("show");
+  document.getElementById("emailModal").style.display = "none";
+});
