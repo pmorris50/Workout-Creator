@@ -11,6 +11,7 @@ router.post('/', async (req, res) => {
           <li>Email: ${req.body.email}</li>
         </ul>
       `
+    const welcomeEmail = `<h1>Welcome to BootyCamp</h1>`
     console.log('Create route hit')
     try {
         const dbUser = await User.create({
@@ -46,6 +47,13 @@ router.post('/', async (req, res) => {
         text: 'Hello World',
         html: newUserOutput,
     };
+    let sendToUser = {
+        from: '"Booty Camper Contact" <bootycampcoach@gmail.com.com>',
+        to: `${req.body.email}`,
+        subject: "Your Journey Begins",
+        text: 'Hello World',
+        html: welcomeEmail,
+    };
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             return console.log(error);
@@ -54,6 +62,16 @@ router.post('/', async (req, res) => {
         console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
         res.render('homepage', { msg: 'email has been sent' })
     });
+
+    transporter.sendMail(sendToUser, (error,info) =>{
+        if (error) {
+            return console.log(error);
+        }
+        console.log('message send: %s', info.messageId);
+        console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+        res.render('homepage', { msg: 'email has been sent' })
+        
+    })
 
 });
 
