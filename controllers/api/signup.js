@@ -11,7 +11,19 @@ router.post('/', async (req, res) => {
           <li>Email: ${req.body.email}</li>
         </ul>
       `
-    const welcomeEmail = `<h1>Welcome to BootyCamp</h1>`
+    const welcomeEmail = `<body style="font-family: Arial, sans-serif;">
+    <div style="background-color: #3f51b5; color: white; padding: 20px; text-align: center;">
+      <h1 style="margin: 0;">Welcome to BootyCamp</h1>
+    </div>
+    <div style="padding: 20px;">
+      <p>Dear, <b>${req.body.firstName} ${req.body.lastName}</b>,</p>
+      <p>We are thrilled to have you join our BootyCamp community! We are excited to help you on your fitness journey and reach your goals.</p>
+      <p>You can access your account by logging in with the following email: <b>${req.body.email}</b></p>
+      <p>Please let us know if you have any questions or concerns. We are here to help.</p>
+      <p>Best regards,</p>
+      <p>The BootyCamp Team</p>
+    </div>
+  </body>`
     console.log('Create route hit')
     try {
         const dbUser = await User.create({
