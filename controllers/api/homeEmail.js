@@ -21,15 +21,15 @@ router.post('/', async (req, res) => {
         port: 587,
         secure: false,
         auth: {
-            user: 'bootcampcoach@gmail.com.com',
-            pass: 'bdccvphayiaziuiq'
+            user: 'bootycampcoach@gmail.com',
+            pass: 'vrdbxzeqnbayntuc'
         },
     });
 
     //setup email data with unicode symbols
     let mailOptions = {
         from: '"Booty Camper Contact" <bootycampcoach@gmail.com.com>',  //sender address
-        to: 'patrickmorris532@gmail.com',                   //list of receivers
+        to: 'bootycampcoach@gmail.com',                   //list of receivers
         subject: "Bootycamp Contact Request",              //subject line
         text: 'Hello World',                 //plain text body      
         html: output,                 //html body
@@ -40,7 +40,7 @@ router.post('/', async (req, res) => {
         }
         console.log('message send: %s', info.messageId);
         console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-        res.render('contact', {msg: 'email has been sent'})
+        res.render('homepage', {msg: 'email has been sent'})
     });
 
 });
