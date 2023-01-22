@@ -278,3 +278,11 @@ document.getElementsByClassName("close")[0].addEventListener("click", function()
   document.getElementById("emailModal").classList.remove("show");
   document.getElementById("emailModal").style.display = "none";
 });
+
+
+
+const emailBtn = document.getElementById('emailBtn')
+
+emailBtn.addEventListener('click', () => {
+  window.location.href = emailBtn.getAttribute("href")
+} )
