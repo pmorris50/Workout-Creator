@@ -278,3 +278,24 @@ document.getElementsByClassName("close")[0].addEventListener("click", function()
   document.getElementById("emailModal").classList.remove("show");
   document.getElementById("emailModal").style.display = "none";
 });
+
+
+
+const emailBtn = document.getElementById('emailBtn')
+
+emailBtn.addEventListener('click', () => {
+  window.location.href = emailBtn.getAttribute("href")
+} )
+
+
+
+
+
+
+//call button event listener
+const callBtn = document.getElementById("callBtn");
+
+callBtn.addEventListener("click", () => {
+  window.location.href = "tel:+1234567890";
+});
+//call button event listener
