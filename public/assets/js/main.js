@@ -286,3 +286,24 @@ const emailBtn = document.getElementById('emailBtn')
 emailBtn.addEventListener('click', () => {
   window.location.href = emailBtn.getAttribute("href")
 } )
+
+
+const mapBtn = document.getElementById('mapBtn')
+
+const mapBtnHandler = () =>{
+const openModal = document.getElementById('mapModal')
+openModal.classList.add("show")
+openModal.style.display = "block";
+
+}
+
+mapBtn.addEventListener('click', mapBtnHandler)
+
+
+//call button event listener
+const callBtn = document.getElementById("callBtn");
+
+callBtn.addEventListener("click", () => {
+  window.location.href = "tel:+1234567890";
+});
+//call button event listener
