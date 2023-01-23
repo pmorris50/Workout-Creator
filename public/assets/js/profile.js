@@ -7,6 +7,7 @@ button.addEventListener('click', (e) => {
     e.preventDefault();
     let selected = [];
     let equipIds = []
+   
     const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
     selected = Array.from(checkboxes).map(x => x.nextElementSibling.textContent.trim());
     equipIds = Array.from(checkboxes).map(x => x.getAttribute('data-equipid'))
@@ -40,5 +41,7 @@ button.addEventListener('click', (e) => {
 });
 
 
-
+const targetArea = () =>{
+    
+}
 
