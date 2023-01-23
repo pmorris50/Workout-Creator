@@ -5,6 +5,10 @@ Welcome to Booty Camp! With our fitness app, you are going to maximize your perf
 
 Our group chose this project because we have passions in fitness and care about our health. It also allowed us to practice coding as a team and repo management.  By the end, our coding, problem solving, git-use, and teamwork skills all were improved by the experience.
 
+#### demo
+
+https://user-images.githubusercontent.com/117794323/214099076-7cf7d7d5-78a7-478f-8e3d-88ea1ad1a48f.mp4
+
 
 ## Table of Contents
 
