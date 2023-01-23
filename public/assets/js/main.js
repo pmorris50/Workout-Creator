@@ -250,3 +250,52 @@
   });
 
 })()
+
+const contactUsFormHandler = async (event) =>{
+  event.preventDefault();
+  document.getElementById("emailModal").classList.add("show");
+  document.getElementById("emailModal").style.display = "block";
+
+const name = document.getElementById('name').value;
+const email = document.getElementById('email').value;
+const subject = document.getElementById('subject').value;
+const message = document.getElementById('message').value;
+
+if(name && email && subject && message){
+  console.log('data entered')
+  const response = await fetch('api/homeEmail/', {
+    method: 'POST',
+    body: JSON.stringify({name, email, subject, message}),
+    headers: {'Content-Type': 'application/json'},
+  })
+}};
+
+document
+.querySelector('.contact')
+.addEventListener('submit', contactUsFormHandler);
+
+document.getElementsByClassName("close")[0].addEventListener("click", function(){
+  document.getElementById("emailModal").classList.remove("show");
+  document.getElementById("emailModal").style.display = "none";
+});
+
+
+
+const emailBtn = document.getElementById('emailBtn')
+
+emailBtn.addEventListener('click', () => {
+  window.location.href = emailBtn.getAttribute("href")
+} )
+
+
+
+
+
+
+//call button event listener
+const callBtn = document.getElementById("callBtn");
+
+callBtn.addEventListener("click", () => {
+  window.location.href = "tel:+1234567890";
+});
+//call button event listener

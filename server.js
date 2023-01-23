@@ -3,14 +3,11 @@ const express = require('express'); //get express
 const session = require('express-session'); //get express-session
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
-const helpers = require('./utils/helpers') //in case we want to add a time stamp/calendar to a users home page 
-//const authRoutes = require('./controllers/api/authRoutes')
-// const passport = require('passport');
-// const LocalStrategy = require('passport-local').Strategy //
-// const FacebookStrategy = require('passport-facebook').Strategy
-// const GoogleStrategy = require('passport-google').Strategy
+const helpers = require('./utils/helpers') //in case we want to add 
+
 
 const sequelize = require('./config/connection');
+const bodyParser = require('body-parser');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
@@ -34,6 +31,7 @@ const sess = {
     // })
 };
 //middleware below 
+app.use(bodyParser.json());
 app.use(session(sess)); //session middleware must be added before any routes that need to access session data 
 app.engine('handlebars', hbs.engine); //sets handlebars template engine as the view engine refer to line 15
 app.set('view engine', 'handlebars'); // Tells express app to look for a file with extension of handlebars when a route renders a page 
