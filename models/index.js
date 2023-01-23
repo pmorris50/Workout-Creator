@@ -1,7 +1,7 @@
 const User = require('./user');
 const Exercise = require('./exercises');
 const Equipment = require('./equipment')
-
+const Muscle = require('./muscle')
 
 
 User.belongsToMany(Equipment, {
@@ -24,6 +24,10 @@ Exercise.hasOne(Equipment, {
     //onDelete: 'CASCADE'
 })
 
+Exercise.hasOne(Muscle,{
+    foreignKey: 'muscle_id',
+    allowNull: false
+})
 
 Equipment.hasMany(Exercise, {
     foreignKey: ''
@@ -33,5 +37,5 @@ Equipment.hasMany(Exercise, {
 
 
 module.exports = {
-    Equipment, Exercise, User
+    Equipment, Exercise, User, Muscle 
 }
