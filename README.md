@@ -27,6 +27,9 @@ https://user-images.githubusercontent.com/117794323/214099076-7cf7d7d5-78a7-478f
 * Model-View-Controller
 * Node Mailer
 
+## Usage 
+Once get on our website, you can see login and sign up button on the navigation bar. If you have an account with us, you can log in to your own profile page. If you do not have a account with us, please go ahead to register. Once you register, it will redirect you to your profile page. Once you log in to your account, you are able to see your member ID, account email, reminder, recent work. Clicking on start workout button, and then you can choose the corresponding workout you would like. The corresponding workout(s) have demo videos if you do not know how to do it correctly. Once you are done, please remeber to log out your account. 
+
 ## Credits
 
 - Link: [Patrick Morris](https://github.com/pmorris50 'The github page for Patrick.')
