@@ -8,7 +8,7 @@ Our group chose this project because we have passions in fitness and care about 
 
 ## Table of Contents
 
-- [Installation](#installation)
+- [Technologies](#technologies)
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
@@ -21,12 +21,7 @@ Our group chose this project because we have passions in fitness and care about 
 * Sequelize.js
 * RESTful APIs
 * Model-View-Controller
-
-
-## Usage
-
-
-
+* Node Mailer
 
 ## Credits
 
